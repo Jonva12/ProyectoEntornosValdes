@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{coche.modelo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<img src="{{coche.imagen}}" align-center onerror="this.src='../../assets/imgs/error.jpg';">
+  <ion-card padding>
+    <b>Genero:</b> 
+      <p>{{coche.genero}}</p>
+    <b>Puertas:</b> 
+      <p>{{coche.puertas}}</p>
+    <b>Descripcion:</b>
+      <p>{{coche.descripcion}}</p>   
+  </ion-card>
+  <ion-item>
+    <iframe width="100%" [src]="url | youtube" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </ion-item>
+</ion-content>

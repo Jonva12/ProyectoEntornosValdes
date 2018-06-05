@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar color="primary"><!--añadimos el color asignado primario al navbar-->
+        <ion-title text-center>Pagina Principal</ion-title><!--Titulo alineado en el centro-->
+        <ion-buttons end>
+          <button ion-button icon-only (click)="crearCoche()"><!--añadimos el evento click para que ejecute la funcion crearCoche()-->
+            <ion-icon name="add-circle"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 text-center>Coches a la venta</h2>
+  <div ion-item *ngFor="let coche of lista" (click)="elegirCoche(coche)"><!--le mandamos a la variable ngFor el valor let Coche de la lista y el evento click para elegir el coche a visualizar-->
+      <div  text-center>
+          {{ coche.modelo }}<!--muestra el modelo de la lista de coches-->
+      </div> 
+      <div>
+          <img src="{{coche.imagen}}" onerror="this.src='../../assets/imgs/error.jpg';"><!--muestra el mensaje de error si no hay ninguna imagen que corresponda al coche-->
+      </div>
+      <button (click)="eliminarCoche(coche)" float-right><!--evento click que llama al metodo para eliminar el coche-->
+        <ion-icon  name="close-circle" ></ion-icon>
+      </button>
+     </div>
+</ion-content>
